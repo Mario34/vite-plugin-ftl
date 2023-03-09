@@ -1,5 +1,3 @@
-<#assign user = "Big Joe"/>
-<#assign latestProduct = {"url":"products/greenmouse.html","name":"green mouse"}/>
 <html>
 <head>
   <title>Welcome!</title>

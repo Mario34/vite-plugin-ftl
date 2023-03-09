@@ -1,4 +1,5 @@
-import tmp from '@tpl/template.ftl'
-import '@tpl/template.ftl.json'
+import { createApp } from 'vue'
+import App from './App.vue'
 
-console.log(tmp)
+const app = createApp(App)
+app.mount('#app')

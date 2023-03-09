@@ -10,10 +10,15 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.14.6",
+    "@vitejs/plugin-vue": "^4.0.0",
     "freemarker.js": "^1.4.0",
     "fs-extra": "^11.1.0",
+    "sass": "^1.58.3",
     "typescript": "^4.9.3",
     "vite": "^4.1.0",
     "vue-tsc": "^1.0.24"
+  },
+  "dependencies": {
+    "vue": "^3.2.47"
   }
 }
