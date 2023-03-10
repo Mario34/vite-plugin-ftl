@@ -24,9 +24,14 @@ export default defineConfig({
 
 转换后的格式
 
-```js
-const ftl = "XXXX"
-export default ftl
+```ts
+declare module '*.ftl' {
+  const ftl: string
+  const html: string
+  const data: string
+  export { html, data, ftl }
+  export default ftl
+}
 ```
 
 所有模版会以字符创的形式导出，可以根据需要再项目里对转换后的字符进行处理

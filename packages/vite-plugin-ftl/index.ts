@@ -56,7 +56,7 @@ function VitePluginFtl(options?: Options): PluginOption {
     viewRoot: '/',
     options: ftlOptions,
   })
-  async function transformFtl(file: string) {
+  async function transformFtl(file: string, content: string) {
     let ftlData = {}
     let resultLines = []
     if (autoLoadData) {
@@ -66,6 +66,7 @@ function VitePluginFtl(options?: Options): PluginOption {
       }
       ftlData = JSON.parse(fs.readFileSync(`${file}.json`, { encoding: 'utf-8' }))
       resultLines.push(`import json from '${file}.json';`)
+      resultLines.push(`export const data = ${JSON.stringify(ftlData)};`)
     }
     const render = (name: string, data: Record<string, any> = {}) => new Promise((resolve, reject) => {
       ftl.render(name, data, (err, html: string) => {
@@ -76,7 +77,9 @@ function VitePluginFtl(options?: Options): PluginOption {
       })
     })
     const result = await render(file, ftlData)
-    resultLines.push(`const ftl = ${JSON.stringify(result)};export default ftl;`)
+    resultLines.push(`export const ftl = ${JSON.stringify(content)};`)
+    resultLines.push(`export const html = ${JSON.stringify(result)};`)
+    resultLines.push('export default html;')
     return resultLines.join('')
   }
   return {
@@ -86,7 +89,7 @@ function VitePluginFtl(options?: Options): PluginOption {
       if (!/\.ftl$/.test(file)) {
         return
       }
-      return await transformFtl(file)
+      return await transformFtl(file, content)
     },
   }
 }

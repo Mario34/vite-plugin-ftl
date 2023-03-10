@@ -26,9 +26,14 @@ export default defineConfig({
 
 The converted js module like this.
 
-```js
-const ftl = "XXXX"
-export default ftl
+```ts
+declare module '*.ftl' {
+  const ftl: string
+  const html: string
+  const data: string
+  export { html, data, ftl }
+  export default ftl
+}
 ```
 
 All templates are exported as String, and converted characters can be processed in the project as needed.
