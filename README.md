@@ -1,1 +1,3 @@
-# freemarker 开发环境
+# vite-plugin-ftl
+
+vite freemarker support

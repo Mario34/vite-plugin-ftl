@@ -1,0 +1,27 @@
+{
+  "name": "vite-plugin-ftl",
+  "version": "0.1.0",
+  "description": "vite .ftl file support",
+  "scripts": {
+    "watch": "rollup --config rollup.config.ts --configPlugin typescript --watch",
+    "build": "rollup --config rollup.config.ts --configPlugin typescript"
+  },
+  "type": "module",
+  "types": "./lib/index.d.ts",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.js",
+  "files": [
+    "lib",
+    "index.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "freemarker.js": "^1.4.0",
+    "vite": "^4.1.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup": "^3.19.0",
+    "typescript": "^4.9.3"
+  }
+}

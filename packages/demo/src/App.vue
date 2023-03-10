@@ -23,7 +23,13 @@ onMounted(() => {
 .ptl-template {
   display: flex;
 
-  .left {}
-  .right {}
+  .left {
+    font-size: 14px;
+    font-family: "source code pro";
+  }
+
+  .right {
+    
+  }
 }
 </style>
