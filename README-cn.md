@@ -1,6 +1,6 @@
 # vite-plugin-ftl
 
-vite freemarker 支持
+vite FreeMarker 支持
 
 ## 如何使用
 

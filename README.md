@@ -1,6 +1,6 @@
 # vite-plugin-ftl
 
-vite freemarker support
+vite FreeMarker support
 
 [简体中文](./README-cn.md)
 
