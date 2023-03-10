@@ -3,7 +3,10 @@
     <div class="left">
       <pre>{{ tmp }}</pre>
     </div>
-    <div class="right" ref="iframeRef" />
+    <div
+      ref="iframeRef"
+      class="right"
+    />
   </div>
 </template>
 
@@ -29,7 +32,7 @@ onMounted(() => {
   }
 
   .right {
-    
+
   }
 }
 </style>
