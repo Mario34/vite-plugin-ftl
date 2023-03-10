@@ -29,9 +29,9 @@ const ftl = "XXXX"
 export default ftl
 ```
 
-所以模版会以字符创的形式导出，可以根据需要再项目里对转换后的字符进行处理
+所有模版会以字符创的形式导出，可以根据需要再项目里对转换后的字符进行处理
 
-## 自动加载数据
+## AutoLoadData
 
 如果你需要将模版与数据分开，可以开启 `autoLoadData` 选项，他会按照下面的规则加载数据
 
@@ -42,7 +42,7 @@ path/to/template.ftl.json # 自动加载模版数据
 
 一个简单的[例子](./packages/demo)
 
-## 插件配置
+## Options
 
 ```ts
 /**
