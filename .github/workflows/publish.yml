@@ -23,7 +23,7 @@ jobs:
         with:
           version: 7
       - run: pnpm i
-      - run: pnpm build
+      - run: pnpm -F vite-plugin-ftl build
       - run: pnpm publish -r
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
