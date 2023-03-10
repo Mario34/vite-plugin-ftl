@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-ftl",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "vite .ftl file support",
   "scripts": {
     "watch": "rollup --config rollup.config.ts --configPlugin typescript --watch",
