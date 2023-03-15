@@ -30,7 +30,7 @@ declare module '*.ftl' {
   const html: string
   const data: string
   export { html, data, ftl }
-  export default ftl
+  export default { html, data, ftl }
 }
 ```
 

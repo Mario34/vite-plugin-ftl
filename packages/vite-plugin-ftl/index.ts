@@ -66,7 +66,6 @@ function VitePluginFtl(options?: Options): PluginOption {
       }
       ftlData = JSON.parse(fs.readFileSync(`${file}.json`, { encoding: 'utf-8' }))
       resultLines.push(`import json from '${file}.json';`)
-      resultLines.push(`export const data = ${JSON.stringify(ftlData)};`)
     }
     const render = (name: string, data: Record<string, any> = {}) => new Promise((resolve, reject) => {
       ftl.render(name, data, (err, html: string) => {
@@ -79,7 +78,8 @@ function VitePluginFtl(options?: Options): PluginOption {
     const result = await render(file, ftlData)
     resultLines.push(`export const ftl = ${JSON.stringify(content)};`)
     resultLines.push(`export const html = ${JSON.stringify(result)};`)
-    resultLines.push('export default html;')
+    resultLines.push(`export const data = ${JSON.stringify(ftlData)};`)
+    resultLines.push('export default { html, ftl, data };')
     return resultLines.join('')
   }
   return {
